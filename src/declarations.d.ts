@@ -8,9 +8,9 @@ module 'compactor' {
 
     type Options = {
         /** use between 0-2 */
-        pageScale: 1.0,   
+        pageScale: number,   
         /** use between 0-1 */
-        pageQuality: 0.75,
+        pageQuality: number,
     }
 
     type CallbackFn = (file: string) => void

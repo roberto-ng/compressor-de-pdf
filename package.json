@@ -13,6 +13,7 @@
     "vite": "^4.2.0"
   },
   "dependencies": {
-    "compactor": "^0.1.2"
+    "compactor": "^0.1.2",
+    "zod": "^3.21.4"
   }
 }
