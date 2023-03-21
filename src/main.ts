@@ -26,16 +26,18 @@ function limparBase64(dados: string) {
 }
 
 async function comprimirPdf(fileData: FileData, callback: CallbackFn) {
+    const data = fileDataSchema.parse(fileData);
+
     const inputFile: InputFile = {
-        bytes: limparBase64(fileData.bytes),
-        fileName: fileData.fileName,
-        fileSize: fileData.fileSize,
-        mimeType: fileData.mimeType ?? 'application/pdf',
+        bytes: limparBase64(data.bytes),
+        fileName: data.fileName,
+        fileSize: data.fileSize,
+        mimeType: data.mimeType ?? 'application/pdf',
     };
 
     const options: Options = {
-        pageQuality: fileData.pageQuality,
-        pageScale: fileData.pageScale,
+        pageQuality: data.pageQuality,
+        pageScale: data.pageScale,
     };
 
     await compressFile(inputFile, callback, options);
