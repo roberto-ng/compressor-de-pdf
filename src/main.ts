@@ -25,7 +25,7 @@ function limparBase64(dados: string) {
     }
 }
 
-async function comprimirPdf(fileData: FileData, callback: CallbackFn) {
+async function comprimirPdf(fileData: FileData | unknown, callback: CallbackFn) {
     const data = fileDataSchema.parse(fileData);
 
     const inputFile: InputFile = {
